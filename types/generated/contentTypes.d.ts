@@ -402,6 +402,42 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiConsultationConsultation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'consultations';
+  info: {
+    displayName: 'Consultation';
+    pluralName: 'consultations';
+    singularName: 'consultation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    consultation_status: Schema.Attribute.Enumeration<
+      ['appointed', 'consulted', 'summarized']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    duration: Schema.Attribute.Integer;
+    end_time: Schema.Attribute.DateTime;
+    fa: Schema.Attribute.Relation<'oneToOne', 'api::fa.fa'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::consultation.consultation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    start_time: Schema.Attribute.DateTime;
+    summary: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaFa extends Struct.CollectionTypeSchema {
   collectionName: 'fas';
   info: {
@@ -415,6 +451,10 @@ export interface ApiFaFa extends Struct.CollectionTypeSchema {
   attributes: {
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     certification: Schema.Attribute.Blocks;
+    consultation: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::consultation.consultation'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1013,6 +1053,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::consultation.consultation': ApiConsultationConsultation;
       'api::fa.fa': ApiFaFa;
       'api::global.global': ApiGlobalGlobal;
       'api::service-category.service-category': ApiServiceCategoryServiceCategory;

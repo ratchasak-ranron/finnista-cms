@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultations",
+  "info": {
+    "singularName": "consultation",
+    "pluralName": "consultations",
+    "displayName": "Consultation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::fa.fa",
+      "inversedBy": "consultation"
+    },
+    "start_time": {
+      "type": "datetime"
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "summary": {
+      "type": "blocks"
+    },
+    "consultation_status": {
+      "type": "enumeration",
+      "enum": [
+        "appointed",
+        "consulted",
+        "summarized"
+      ]
+    }
+  }
+}
