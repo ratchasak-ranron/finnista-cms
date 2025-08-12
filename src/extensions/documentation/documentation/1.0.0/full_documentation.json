@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-04T07:16:03.017Z"
+    "x-generation-date": "2025-08-12T15:49:39.031Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -4297,9 +4297,20 @@
               "consultation_status": {
                 "type": "string",
                 "enum": [
-                  "appointed",
+                  "scheduled",
                   "consulted",
                   "summarized"
+                ]
+              },
+              "meeting_link": {
+                "type": "string"
+              },
+              "meeting_provider": {
+                "type": "string",
+                "enum": [
+                  "google_meet",
+                  "zoom",
+                  "teams"
                 ]
               },
               "locale": {
@@ -5075,86 +5086,18 @@
                   }
                 }
               },
-              "consultation": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  },
-                  "fa": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "documentId": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "start_time": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "end_time": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "duration": {
-                    "type": "integer"
-                  },
-                  "summary": {},
-                  "consultation_status": {
-                    "type": "string",
-                    "enum": [
-                      "appointed",
-                      "consulted",
-                      "summarized"
-                    ]
-                  },
-                  "createdAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "updatedAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "publishedAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "createdBy": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "documentId": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "updatedBy": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "documentId": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "locale": {
-                    "type": "string"
-                  },
-                  "localizations": {
-                    "type": "array",
-                    "items": {
+              "consultations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    },
+                    "fa": {
                       "type": "object",
                       "properties": {
                         "id": {
@@ -5162,6 +5105,88 @@
                         },
                         "documentId": {
                           "type": "string"
+                        }
+                      }
+                    },
+                    "start_time": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "end_time": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "duration": {
+                      "type": "integer"
+                    },
+                    "summary": {},
+                    "consultation_status": {
+                      "type": "string",
+                      "enum": [
+                        "scheduled",
+                        "consulted",
+                        "summarized"
+                      ]
+                    },
+                    "meeting_link": {
+                      "type": "string"
+                    },
+                    "meeting_provider": {
+                      "type": "string",
+                      "enum": [
+                        "google_meet",
+                        "zoom",
+                        "teams"
+                      ]
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "publishedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "createdBy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "updatedBy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "locale": {
+                      "type": "string"
+                    },
+                    "localizations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "documentId": {
+                            "type": "string"
+                          }
                         }
                       }
                     }
@@ -5236,9 +5261,20 @@
           "consultation_status": {
             "type": "string",
             "enum": [
-              "appointed",
+              "scheduled",
               "consulted",
               "summarized"
+            ]
+          },
+          "meeting_link": {
+            "type": "string"
+          },
+          "meeting_provider": {
+            "type": "string",
+            "enum": [
+              "google_meet",
+              "zoom",
+              "teams"
             ]
           },
           "createdAt": {
@@ -5358,16 +5394,19 @@
                   "example": "string or id"
                 }
               },
-              "consultation": {
-                "oneOf": [
-                  {
-                    "type": "integer"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ],
-                "example": "string or id"
+              "consultations": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
               },
               "locale": {
                 "type": "string"
@@ -6239,86 +6278,18 @@
                         }
                       }
                     },
-                    "consultation": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "number"
-                        },
-                        "documentId": {
-                          "type": "string"
-                        },
-                        "fa": {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "number"
-                            },
-                            "documentId": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "start_time": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "end_time": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "duration": {
-                          "type": "integer"
-                        },
-                        "summary": {},
-                        "consultation_status": {
-                          "type": "string",
-                          "enum": [
-                            "appointed",
-                            "consulted",
-                            "summarized"
-                          ]
-                        },
-                        "createdAt": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "updatedAt": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "publishedAt": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "createdBy": {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "number"
-                            },
-                            "documentId": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "updatedBy": {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "number"
-                            },
-                            "documentId": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "locale": {
-                          "type": "string"
-                        },
-                        "localizations": {
-                          "type": "array",
-                          "items": {
+                    "consultations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "documentId": {
+                            "type": "string"
+                          },
+                          "fa": {
                             "type": "object",
                             "properties": {
                               "id": {
@@ -6326,6 +6297,88 @@
                               },
                               "documentId": {
                                 "type": "string"
+                              }
+                            }
+                          },
+                          "start_time": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "end_time": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "duration": {
+                            "type": "integer"
+                          },
+                          "summary": {},
+                          "consultation_status": {
+                            "type": "string",
+                            "enum": [
+                              "scheduled",
+                              "consulted",
+                              "summarized"
+                            ]
+                          },
+                          "meeting_link": {
+                            "type": "string"
+                          },
+                          "meeting_provider": {
+                            "type": "string",
+                            "enum": [
+                              "google_meet",
+                              "zoom",
+                              "teams"
+                            ]
+                          },
+                          "createdAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "publishedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "createdBy": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "documentId": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "updatedBy": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "documentId": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "locale": {
+                            "type": "string"
+                          },
+                          "localizations": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "documentId": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -6439,14 +6492,17 @@
               }
             }
           },
-          "consultation": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "number"
-              },
-              "documentId": {
-                "type": "string"
+          "consultations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "documentId": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -8424,86 +8480,18 @@
                   }
                 }
               },
-              "consultation": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  },
-                  "fa": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "documentId": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "start_time": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "end_time": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "duration": {
-                    "type": "integer"
-                  },
-                  "summary": {},
-                  "consultation_status": {
-                    "type": "string",
-                    "enum": [
-                      "appointed",
-                      "consulted",
-                      "summarized"
-                    ]
-                  },
-                  "createdAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "updatedAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "publishedAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "createdBy": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "documentId": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "updatedBy": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "documentId": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "locale": {
-                    "type": "string"
-                  },
-                  "localizations": {
-                    "type": "array",
-                    "items": {
+              "consultations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    },
+                    "fa": {
                       "type": "object",
                       "properties": {
                         "id": {
@@ -8511,6 +8499,88 @@
                         },
                         "documentId": {
                           "type": "string"
+                        }
+                      }
+                    },
+                    "start_time": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "end_time": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "duration": {
+                      "type": "integer"
+                    },
+                    "summary": {},
+                    "consultation_status": {
+                      "type": "string",
+                      "enum": [
+                        "scheduled",
+                        "consulted",
+                        "summarized"
+                      ]
+                    },
+                    "meeting_link": {
+                      "type": "string"
+                    },
+                    "meeting_provider": {
+                      "type": "string",
+                      "enum": [
+                        "google_meet",
+                        "zoom",
+                        "teams"
+                      ]
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "publishedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "createdBy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "updatedBy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "locale": {
+                      "type": "string"
+                    },
+                    "localizations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "documentId": {
+                            "type": "string"
+                          }
                         }
                       }
                     }

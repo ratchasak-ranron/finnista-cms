@@ -13,9 +13,9 @@
   "attributes": {
     "fa": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::fa.fa",
-      "inversedBy": "consultation"
+      "inversedBy": "consultations"
     },
     "start_time": {
       "type": "datetime"
@@ -32,9 +32,20 @@
     "consultation_status": {
       "type": "enumeration",
       "enum": [
-        "appointed",
+        "scheduled",
         "consulted",
         "summarized"
+      ]
+    },
+    "meeting_link": {
+      "type": "string"
+    },
+    "meeting_provider": {
+      "type": "enumeration",
+      "enum": [
+        "google_meet",
+        "zoom",
+        "teams"
       ]
     }
   }

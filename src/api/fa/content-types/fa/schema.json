@@ -54,9 +54,9 @@
       "target": "api::service-category.service-category",
       "mappedBy": "fa"
     },
-    "consultation": {
+    "consultations": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::consultation.consultation",
       "mappedBy": "fa"
     }

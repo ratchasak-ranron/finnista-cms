@@ -415,20 +415,24 @@ export interface ApiConsultationConsultation
   };
   attributes: {
     consultation_status: Schema.Attribute.Enumeration<
-      ['appointed', 'consulted', 'summarized']
+      ['scheduled', 'consulted', 'summarized']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     duration: Schema.Attribute.Integer;
     end_time: Schema.Attribute.DateTime;
-    fa: Schema.Attribute.Relation<'oneToOne', 'api::fa.fa'>;
+    fa: Schema.Attribute.Relation<'manyToOne', 'api::fa.fa'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::consultation.consultation'
     > &
       Schema.Attribute.Private;
+    meeting_link: Schema.Attribute.String;
+    meeting_provider: Schema.Attribute.Enumeration<
+      ['google_meet', 'zoom', 'teams']
+    >;
     publishedAt: Schema.Attribute.DateTime;
     start_time: Schema.Attribute.DateTime;
     summary: Schema.Attribute.Blocks;
@@ -451,8 +455,8 @@ export interface ApiFaFa extends Struct.CollectionTypeSchema {
   attributes: {
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     certification: Schema.Attribute.Blocks;
-    consultation: Schema.Attribute.Relation<
-      'oneToOne',
+    consultations: Schema.Attribute.Relation<
+      'oneToMany',
       'api::consultation.consultation'
     >;
     createdAt: Schema.Attribute.DateTime;
