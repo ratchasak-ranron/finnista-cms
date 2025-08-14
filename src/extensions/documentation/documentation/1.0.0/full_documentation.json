@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-14T13:59:27.844Z"
+    "x-generation-date": "2025-08-14T15:06:46.371Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -4297,9 +4297,9 @@
               "consultationStatus": {
                 "type": "string",
                 "enum": [
-                  "scheduled",
-                  "consulted",
-                  "summarized"
+                  "SCHEDULED",
+                  "CONSULTED",
+                  "REVIEWED"
                 ]
               },
               "meetingLink": {
@@ -5123,9 +5123,9 @@
                     "consultationStatus": {
                       "type": "string",
                       "enum": [
-                        "scheduled",
-                        "consulted",
-                        "summarized"
+                        "SCHEDULED",
+                        "CONSULTED",
+                        "REVIEWED"
                       ]
                     },
                     "meetingLink": {
@@ -5261,9 +5261,9 @@
           "consultationStatus": {
             "type": "string",
             "enum": [
-              "scheduled",
-              "consulted",
-              "summarized"
+              "SCHEDULED",
+              "CONSULTED",
+              "REVIEWED"
             ]
           },
           "meetingLink": {
@@ -6315,9 +6315,9 @@
                           "consultationStatus": {
                             "type": "string",
                             "enum": [
-                              "scheduled",
-                              "consulted",
-                              "summarized"
+                              "SCHEDULED",
+                              "CONSULTED",
+                              "REVIEWED"
                             ]
                           },
                           "meetingLink": {
@@ -8517,9 +8517,9 @@
                     "consultationStatus": {
                       "type": "string",
                       "enum": [
-                        "scheduled",
-                        "consulted",
-                        "summarized"
+                        "SCHEDULED",
+                        "CONSULTED",
+                        "REVIEWED"
                       ]
                     },
                     "meetingLink": {

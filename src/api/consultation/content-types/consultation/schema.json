@@ -32,9 +32,9 @@
     "consultationStatus": {
       "type": "enumeration",
       "enum": [
-        "scheduled",
-        "consulted",
-        "summarized"
+        "SCHEDULED",
+        "CONSULTED",
+        "REVIEWED"
       ]
     },
     "meetingLink": {

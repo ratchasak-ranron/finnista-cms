@@ -415,7 +415,7 @@ export interface ApiConsultationConsultation
   };
   attributes: {
     consultationStatus: Schema.Attribute.Enumeration<
-      ['scheduled', 'consulted', 'summarized']
+      ['SCHEDULED', 'CONSULTED', 'REVIEWED']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
