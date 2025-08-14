@@ -17,10 +17,10 @@
       "target": "api::fa.fa",
       "inversedBy": "consultations"
     },
-    "start_time": {
+    "startTime": {
       "type": "datetime"
     },
-    "end_time": {
+    "endTime": {
       "type": "datetime"
     },
     "duration": {
@@ -29,7 +29,7 @@
     "summary": {
       "type": "blocks"
     },
-    "consultation_status": {
+    "consultationStatus": {
       "type": "enumeration",
       "enum": [
         "scheduled",
@@ -37,10 +37,10 @@
         "summarized"
       ]
     },
-    "meeting_link": {
+    "meetingLink": {
       "type": "string"
     },
-    "meeting_provider": {
+    "meetingProvider": {
       "type": "enumeration",
       "enum": [
         "google_meet",

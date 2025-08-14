@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-12T15:49:39.031Z"
+    "x-generation-date": "2025-08-14T13:59:27.844Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -4282,11 +4282,11 @@
                 ],
                 "example": "string or id"
               },
-              "start_time": {
+              "startTime": {
                 "type": "string",
                 "format": "date-time"
               },
-              "end_time": {
+              "endTime": {
                 "type": "string",
                 "format": "date-time"
               },
@@ -4294,7 +4294,7 @@
                 "type": "integer"
               },
               "summary": {},
-              "consultation_status": {
+              "consultationStatus": {
                 "type": "string",
                 "enum": [
                   "scheduled",
@@ -4302,10 +4302,10 @@
                   "summarized"
                 ]
               },
-              "meeting_link": {
+              "meetingLink": {
                 "type": "string"
               },
-              "meeting_provider": {
+              "meetingProvider": {
                 "type": "string",
                 "enum": [
                   "google_meet",
@@ -4991,20 +4991,20 @@
               "profession": {
                 "type": "string"
               },
-              "professional_summary": {
+              "professionalSummary": {
                 "type": "string"
               },
               "expertise": {},
               "service": {},
               "education": {},
               "certification": {},
-              "year_of_experience": {
+              "yearOfExperience": {
                 "type": "integer"
               },
-              "credits_per_meet": {
+              "creditsPerMeet": {
                 "type": "integer"
               },
-              "service_categories": {
+              "serviceCategories": {
                 "type": "array",
                 "items": {
                   "type": "object",
@@ -5108,11 +5108,11 @@
                         }
                       }
                     },
-                    "start_time": {
+                    "startTime": {
                       "type": "string",
                       "format": "date-time"
                     },
-                    "end_time": {
+                    "endTime": {
                       "type": "string",
                       "format": "date-time"
                     },
@@ -5120,7 +5120,7 @@
                       "type": "integer"
                     },
                     "summary": {},
-                    "consultation_status": {
+                    "consultationStatus": {
                       "type": "string",
                       "enum": [
                         "scheduled",
@@ -5128,10 +5128,10 @@
                         "summarized"
                       ]
                     },
-                    "meeting_link": {
+                    "meetingLink": {
                       "type": "string"
                     },
-                    "meeting_provider": {
+                    "meetingProvider": {
                       "type": "string",
                       "enum": [
                         "google_meet",
@@ -5246,11 +5246,11 @@
               }
             }
           },
-          "start_time": {
+          "startTime": {
             "type": "string",
             "format": "date-time"
           },
-          "end_time": {
+          "endTime": {
             "type": "string",
             "format": "date-time"
           },
@@ -5258,7 +5258,7 @@
             "type": "integer"
           },
           "summary": {},
-          "consultation_status": {
+          "consultationStatus": {
             "type": "string",
             "enum": [
               "scheduled",
@@ -5266,10 +5266,10 @@
               "summarized"
             ]
           },
-          "meeting_link": {
+          "meetingLink": {
             "type": "string"
           },
-          "meeting_provider": {
+          "meetingProvider": {
             "type": "string",
             "enum": [
               "google_meet",
@@ -5367,20 +5367,20 @@
               "profession": {
                 "type": "string"
               },
-              "professional_summary": {
+              "professionalSummary": {
                 "type": "string"
               },
               "expertise": {},
               "service": {},
               "education": {},
               "certification": {},
-              "year_of_experience": {
+              "yearOfExperience": {
                 "type": "integer"
               },
-              "credits_per_meet": {
+              "creditsPerMeet": {
                 "type": "integer"
               },
-              "service_categories": {
+              "serviceCategories": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -6077,20 +6077,20 @@
           "profession": {
             "type": "string"
           },
-          "professional_summary": {
+          "professionalSummary": {
             "type": "string"
           },
           "expertise": {},
           "service": {},
           "education": {},
           "certification": {},
-          "year_of_experience": {
+          "yearOfExperience": {
             "type": "integer"
           },
-          "credits_per_meet": {
+          "creditsPerMeet": {
             "type": "integer"
           },
-          "service_categories": {
+          "serviceCategories": {
             "type": "array",
             "items": {
               "type": "object",
@@ -6251,20 +6251,20 @@
                     "profession": {
                       "type": "string"
                     },
-                    "professional_summary": {
+                    "professionalSummary": {
                       "type": "string"
                     },
                     "expertise": {},
                     "service": {},
                     "education": {},
                     "certification": {},
-                    "year_of_experience": {
+                    "yearOfExperience": {
                       "type": "integer"
                     },
-                    "credits_per_meet": {
+                    "creditsPerMeet": {
                       "type": "integer"
                     },
-                    "service_categories": {
+                    "serviceCategories": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -6300,11 +6300,11 @@
                               }
                             }
                           },
-                          "start_time": {
+                          "startTime": {
                             "type": "string",
                             "format": "date-time"
                           },
-                          "end_time": {
+                          "endTime": {
                             "type": "string",
                             "format": "date-time"
                           },
@@ -6312,7 +6312,7 @@
                             "type": "integer"
                           },
                           "summary": {},
-                          "consultation_status": {
+                          "consultationStatus": {
                             "type": "string",
                             "enum": [
                               "scheduled",
@@ -6320,10 +6320,10 @@
                               "summarized"
                             ]
                           },
-                          "meeting_link": {
+                          "meetingLink": {
                             "type": "string"
                           },
-                          "meeting_provider": {
+                          "meetingProvider": {
                             "type": "string",
                             "enum": [
                               "google_meet",
@@ -8385,20 +8385,20 @@
               "profession": {
                 "type": "string"
               },
-              "professional_summary": {
+              "professionalSummary": {
                 "type": "string"
               },
               "expertise": {},
               "service": {},
               "education": {},
               "certification": {},
-              "year_of_experience": {
+              "yearOfExperience": {
                 "type": "integer"
               },
-              "credits_per_meet": {
+              "creditsPerMeet": {
                 "type": "integer"
               },
-              "service_categories": {
+              "serviceCategories": {
                 "type": "array",
                 "items": {
                   "type": "object",
@@ -8502,11 +8502,11 @@
                         }
                       }
                     },
-                    "start_time": {
+                    "startTime": {
                       "type": "string",
                       "format": "date-time"
                     },
-                    "end_time": {
+                    "endTime": {
                       "type": "string",
                       "format": "date-time"
                     },
@@ -8514,7 +8514,7 @@
                       "type": "integer"
                     },
                     "summary": {},
-                    "consultation_status": {
+                    "consultationStatus": {
                       "type": "string",
                       "enum": [
                         "scheduled",
@@ -8522,10 +8522,10 @@
                         "summarized"
                       ]
                     },
-                    "meeting_link": {
+                    "meetingLink": {
                       "type": "string"
                     },
-                    "meeting_provider": {
+                    "meetingProvider": {
                       "type": "string",
                       "enum": [
                         "google_meet",

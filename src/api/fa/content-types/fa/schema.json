@@ -27,7 +27,7 @@
     "profession": {
       "type": "string"
     },
-    "professional_summary": {
+    "professionalSummary": {
       "type": "text"
     },
     "expertise": {
@@ -42,13 +42,13 @@
     "certification": {
       "type": "blocks"
     },
-    "year_of_experience": {
+    "yearOfExperience": {
       "type": "integer"
     },
-    "credits_per_meet": {
+    "creditsPerMeet": {
       "type": "integer"
     },
-    "service_categories": {
+    "serviceCategories": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::service-category.service-category",

@@ -21,7 +21,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::fa.fa",
-      "inversedBy": "service_categories"
+      "inversedBy": "serviceCategories"
     }
   }
 }

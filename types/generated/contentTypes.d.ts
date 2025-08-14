@@ -414,14 +414,14 @@ export interface ApiConsultationConsultation
     draftAndPublish: true;
   };
   attributes: {
-    consultation_status: Schema.Attribute.Enumeration<
+    consultationStatus: Schema.Attribute.Enumeration<
       ['scheduled', 'consulted', 'summarized']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     duration: Schema.Attribute.Integer;
-    end_time: Schema.Attribute.DateTime;
+    endTime: Schema.Attribute.DateTime;
     fa: Schema.Attribute.Relation<'manyToOne', 'api::fa.fa'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -429,12 +429,12 @@ export interface ApiConsultationConsultation
       'api::consultation.consultation'
     > &
       Schema.Attribute.Private;
-    meeting_link: Schema.Attribute.String;
-    meeting_provider: Schema.Attribute.Enumeration<
+    meetingLink: Schema.Attribute.String;
+    meetingProvider: Schema.Attribute.Enumeration<
       ['google_meet', 'zoom', 'teams']
     >;
     publishedAt: Schema.Attribute.DateTime;
-    start_time: Schema.Attribute.DateTime;
+    startTime: Schema.Attribute.DateTime;
     summary: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -462,7 +462,7 @@ export interface ApiFaFa extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    credits_per_meet: Schema.Attribute.Integer;
+    creditsPerMeet: Schema.Attribute.Integer;
     education: Schema.Attribute.Blocks;
     expertise: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -470,17 +470,17 @@ export interface ApiFaFa extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     profession: Schema.Attribute.String;
-    professional_summary: Schema.Attribute.Text;
+    professionalSummary: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     service: Schema.Attribute.Blocks;
-    service_categories: Schema.Attribute.Relation<
+    serviceCategories: Schema.Attribute.Relation<
       'oneToMany',
       'api::service-category.service-category'
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    year_of_experience: Schema.Attribute.Integer;
+    yearOfExperience: Schema.Attribute.Integer;
   };
 }
 
