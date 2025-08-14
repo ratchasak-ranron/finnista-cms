@@ -431,7 +431,7 @@ export interface ApiConsultationConsultation
       Schema.Attribute.Private;
     meetingLink: Schema.Attribute.String;
     meetingProvider: Schema.Attribute.Enumeration<
-      ['google_meet', 'zoom', 'teams']
+      ['GOOGLE_MEET', 'ZOOM', 'TEAMS']
     >;
     publishedAt: Schema.Attribute.DateTime;
     startTime: Schema.Attribute.DateTime;

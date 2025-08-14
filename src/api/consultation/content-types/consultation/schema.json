@@ -43,9 +43,9 @@
     "meetingProvider": {
       "type": "enumeration",
       "enum": [
-        "google_meet",
-        "zoom",
-        "teams"
+        "GOOGLE_MEET",
+        "ZOOM",
+        "TEAMS"
       ]
     }
   }
