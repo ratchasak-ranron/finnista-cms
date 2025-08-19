@@ -423,6 +423,7 @@ export interface ApiConsultationConsultation
     duration: Schema.Attribute.Integer;
     endTime: Schema.Attribute.DateTime;
     fa: Schema.Attribute.Relation<'manyToOne', 'api::fa.fa'>;
+    isSentSummaryEmail: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -439,6 +440,10 @@ export interface ApiConsultationConsultation
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -464,6 +469,7 @@ export interface ApiFaFa extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     creditsPerMeet: Schema.Attribute.Integer;
     education: Schema.Attribute.Blocks;
+    email: Schema.Attribute.Email;
     expertise: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::fa.fa'> &
@@ -1002,12 +1008,15 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    consultations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::consultation.consultation'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
