@@ -1,5 +1,42 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedCourseChapter extends Struct.ComponentSchema {
+  collectionName: 'components_shared_course_chapters';
+  info: {
+    displayName: 'Course Chapter';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    materials: Schema.Attribute.Component<'shared.course-material', true>;
+    name: Schema.Attribute.String;
+    videos: Schema.Attribute.Component<'shared.course-video', true>;
+  };
+}
+
+export interface SharedCourseMaterial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_course_materials';
+  info: {
+    displayName: 'Course Material';
+  };
+  attributes: {
+    fileSizeMb: Schema.Attribute.Decimal;
+    materialLink: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCourseVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_course_videos';
+  info: {
+    displayName: 'Course Video';
+  };
+  attributes: {
+    durationMin: Schema.Attribute.Decimal;
+    name: Schema.Attribute.String;
+    videoLink: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +102,9 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.course-chapter': SharedCourseChapter;
+      'shared.course-material': SharedCourseMaterial;
+      'shared.course-video': SharedCourseVideo;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

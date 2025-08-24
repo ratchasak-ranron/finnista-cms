@@ -447,6 +447,43 @@ export interface ApiConsultationConsultation
   };
 }
 
+export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
+  collectionName: 'courses';
+  info: {
+    displayName: 'Course';
+    pluralName: 'courses';
+    singularName: 'course';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<'manyToOne', 'api::fa.fa'>;
+    chapters: Schema.Attribute.DynamicZone<['shared.course-chapter']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    learningDurationMin: Schema.Attribute.Integer;
+    level: Schema.Attribute.Enumeration<['EASY', 'MEDIUM', 'HARD']>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course.course'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    serviceCategories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::service-category.service-category'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaFa extends Struct.CollectionTypeSchema {
   collectionName: 'fas';
   info: {
@@ -464,6 +501,7 @@ export interface ApiFaFa extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::consultation.consultation'
     >;
+    courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -534,6 +572,7 @@ export interface ApiServiceCategoryServiceCategory
     draftAndPublish: true;
   };
   attributes: {
+    courses: Schema.Attribute.Relation<'manyToMany', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1067,6 +1106,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::consultation.consultation': ApiConsultationConsultation;
+      'api::course.course': ApiCourseCourse;
       'api::fa.fa': ApiFaFa;
       'api::global.global': ApiGlobalGlobal;
       'api::service-category.service-category': ApiServiceCategoryServiceCategory;

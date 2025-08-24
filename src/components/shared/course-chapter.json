@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_course_chapters",
+  "info": {
+    "displayName": "Course Chapter"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "videos": {
+      "type": "component",
+      "component": "shared.course-video",
+      "repeatable": true
+    },
+    "materials": {
+      "type": "component",
+      "component": "shared.course-material",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

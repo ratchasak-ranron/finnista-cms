@@ -62,6 +62,12 @@
     },
     "email": {
       "type": "email"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "author"
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_course_videos",
+  "info": {
+    "displayName": "Course Video"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "videoLink": {
+      "type": "string"
+    },
+    "durationMin": {
+      "type": "decimal"
+    }
+  },
+  "config": {}
+}

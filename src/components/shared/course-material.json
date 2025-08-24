@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_course_materials",
+  "info": {
+    "displayName": "Course Material"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "materialLink": {
+      "type": "string"
+    },
+    "fileSizeMb": {
+      "type": "decimal"
+    }
+  },
+  "config": {}
+}

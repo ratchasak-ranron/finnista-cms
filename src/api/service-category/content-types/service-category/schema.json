@@ -22,6 +22,12 @@
       "relation": "manyToOne",
       "target": "api::fa.fa",
       "inversedBy": "serviceCategories"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "mappedBy": "serviceCategories"
     }
   }
 }
