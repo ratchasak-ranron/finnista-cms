@@ -48,5 +48,8 @@ spec:
               value: "<BUILD_TAG>"
             - name: NEXT_PUBLIC_APP_ENV
               value: "uat"
+          envFrom:
+            - secretRef:
+                name: finnista-cms-env
       imagePullSecrets:
         - name: <IMAGE_PULL_SECRET>
