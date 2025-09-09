@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: finnista-cms
+spec:
+ ports:
+ - port: 80
+   targetPort: 1337
+ selector:
+   app: finnista-cms
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finnista-cms
+spec:
+  selector:
+    matchLabels:
+      app: finnista-cms
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: finnista-cms
+    spec:
+      containers:
+        - name: finnista-cms
+          image: <IMAGE>
+          resources:
+            limits:
+              cpu: "2"
+              memory: 2048Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+          env:
+            - name: BUILD_TAG
+              value: "<BUILD_TAG>"
+            - name: NEXT_PUBLIC_APP_ENV
+              value: "uat"
+      imagePullSecrets:
+        - name: <IMAGE_PULL_SECRET>
