@@ -496,7 +496,7 @@ export interface ApiFaFa extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    availableTimeSlot: Schema.Attribute.Component<
+    availableTimeSlots: Schema.Attribute.Component<
       'shared.available-time-slot',
       true
     >;

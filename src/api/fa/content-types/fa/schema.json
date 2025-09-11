@@ -69,7 +69,7 @@
       "target": "api::course.course",
       "mappedBy": "author"
     },
-    "availableTimeSlot": {
+    "availableTimeSlots": {
       "type": "component",
       "component": "shared.available-time-slot",
       "repeatable": true

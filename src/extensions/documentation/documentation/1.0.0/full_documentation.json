@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-11T07:12:12.725Z"
+    "x-generation-date": "2025-09-11T07:27:29.806Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6248,7 +6248,7 @@
                   }
                 }
               },
-              "availableTimeSlot": {
+              "availableTimeSlots": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
@@ -8153,7 +8153,7 @@
                   }
                 }
               },
-              "availableTimeSlot": {
+              "availableTimeSlots": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
@@ -8391,7 +8391,7 @@
                   "example": "string or id"
                 }
               },
-              "availableTimeSlot": {
+              "availableTimeSlots": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
@@ -9895,7 +9895,7 @@
                         }
                       }
                     },
-                    "availableTimeSlot": {
+                    "availableTimeSlots": {
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
@@ -10054,7 +10054,7 @@
               }
             }
           },
-          "availableTimeSlot": {
+          "availableTimeSlots": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
@@ -12690,7 +12690,7 @@
                   }
                 }
               },
-              "availableTimeSlot": {
+              "availableTimeSlots": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
