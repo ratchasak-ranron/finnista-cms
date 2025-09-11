@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-24T17:37:26.734Z"
+    "x-generation-date": "2025-09-11T06:41:38.938Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6119,6 +6119,12 @@
                   }
                 }
               },
+              "availableTimeSlot": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
+                }
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -6346,6 +6352,36 @@
             "items": {
               "$ref": "#/components/schemas/SharedCourseMaterialComponent"
             }
+          }
+        }
+      },
+      "SharedAvailableTimeSlotComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "dayOfWeek": {
+            "type": "string",
+            "enum": [
+              "MONDAY",
+              "TUESDAY",
+              "WEDNESDAY",
+              "THURSDAY",
+              "FRIDAY",
+              "SATURDAY",
+              "SUNDAY"
+            ]
+          },
+          "beginTime": {
+            "type": "string",
+            "format": "time",
+            "example": "12:54.000"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "time",
+            "example": "12:54.000"
           }
         }
       },
@@ -7719,6 +7755,12 @@
                   }
                 }
               },
+              "availableTimeSlot": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
+                }
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -7949,6 +7991,12 @@
                     }
                   ],
                   "example": "string or id"
+                }
+              },
+              "availableTimeSlot": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
                 }
               },
               "locale": {
@@ -9320,6 +9368,12 @@
                         }
                       }
                     },
+                    "availableTimeSlot": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
+                      }
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -9471,6 +9525,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "availableTimeSlot": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
             }
           },
           "createdAt": {
@@ -11972,6 +12032,12 @@
                       "type": "string"
                     }
                   }
+                }
+              },
+              "availableTimeSlot": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedAvailableTimeSlotComponent"
                 }
               },
               "createdAt": {

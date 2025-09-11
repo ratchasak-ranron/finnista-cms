@@ -1,5 +1,28 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedAvailableTimeSlot extends Struct.ComponentSchema {
+  collectionName: 'components_shared_available_time_slots';
+  info: {
+    displayName: 'Available Time Slot';
+    icon: 'clock';
+  };
+  attributes: {
+    beginTime: Schema.Attribute.Time;
+    dayOfWeek: Schema.Attribute.Enumeration<
+      [
+        'MONDAY',
+        'TUESDAY',
+        'WEDNESDAY',
+        'THURSDAY',
+        'FRIDAY',
+        'SATURDAY',
+        'SUNDAY',
+      ]
+    >;
+    endTime: Schema.Attribute.Time;
+  };
+}
+
 export interface SharedCourseChapter extends Struct.ComponentSchema {
   collectionName: 'components_shared_course_chapters';
   info: {
@@ -102,6 +125,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.available-time-slot': SharedAvailableTimeSlot;
       'shared.course-chapter': SharedCourseChapter;
       'shared.course-material': SharedCourseMaterial;
       'shared.course-video': SharedCourseVideo;

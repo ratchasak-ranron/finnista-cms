@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_available_time_slots",
+  "info": {
+    "displayName": "Available Time Slot",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "dayOfWeek": {
+      "type": "enumeration",
+      "enum": [
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY",
+        "FRIDAY",
+        "SATURDAY",
+        "SUNDAY"
+      ]
+    },
+    "beginTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    }
+  },
+  "config": {}
+}

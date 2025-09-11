@@ -495,6 +495,10 @@ export interface ApiFaFa extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    availableTimeSlot: Schema.Attribute.Component<
+      'shared.available-time-slot',
+      true
+    >;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     certification: Schema.Attribute.Blocks;
     consultations: Schema.Attribute.Relation<

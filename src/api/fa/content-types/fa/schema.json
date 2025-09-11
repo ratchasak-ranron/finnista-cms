@@ -68,6 +68,11 @@
       "relation": "oneToMany",
       "target": "api::course.course",
       "mappedBy": "author"
+    },
+    "availableTimeSlot": {
+      "type": "component",
+      "component": "shared.available-time-slot",
+      "repeatable": true
     }
   }
 }
