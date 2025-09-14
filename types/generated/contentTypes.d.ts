@@ -583,6 +583,7 @@ export interface ApiServiceCategoryServiceCategory
       Schema.Attribute.Private;
     description: Schema.Attribute.String;
     fa: Schema.Attribute.Relation<'manyToOne', 'api::fa.fa'>;
+    icon: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

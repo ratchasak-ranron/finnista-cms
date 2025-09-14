@@ -11,6 +11,9 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "icon": {
+      "type": "string"
+    },
     "name": {
       "type": "string"
     },
